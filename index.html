@@ -46,7 +46,7 @@
   }
   .logo {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 500;
     letter-spacing: 0.02em;
     color: var(--ink);
@@ -151,6 +151,27 @@
     100% { box-shadow: 0 0 0 0 rgba(184, 147, 90, 0); }
   }
 
+  .hero-kicker {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+  .hero-kicker:empty { display: none; }
+  .hero-sub {
+    max-width: 640px;
+    margin: -8px auto 48px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(242, 237, 228, 0.78);
+    text-align: center;
+    text-wrap: balance;
+  }
+  .hero-sub:empty { display: none; }
   h1.hero-title {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 400;
@@ -496,7 +517,10 @@
     .ambient { display: none; }
     .hero { padding: 110px 20px 80px; }
     .badge { margin-bottom: 28px; font-size: 10px; padding: 6px 14px; }
-    h1.hero-title { font-size: clamp(34px, 8.5vw, 52px); margin-bottom: 40px; }
+    h1.hero-title { font-size: clamp(34px, 8.5vw, 52px); margin-bottom: 28px; }
+    .hero-kicker { font-size: 10px; letter-spacing: 0.24em; margin-bottom: 22px; }
+    .hero-kicker::before, .hero-kicker::after { width: 20px; }
+    .hero-sub { font-size: 15px; margin: -4px auto 32px; padding: 0 6px; }
     .who h2, .private h2 { font-size: clamp(34px, 8vw, 56px); }
     .who-body { font-size: 15px; }
     .who-body p { margin-bottom: 22px; }
@@ -532,7 +556,9 @@
   <canvas id="particle-canvas"></canvas>
 
   <div class="hero-content">
+    <div class="hero-kicker" data-i18n="hero.kicker"></div>
     <h1 class="hero-title" data-i18n-html="hero.title">Welcome to the future. Curated real estate deals — revealed in <em>seconds</em>.</h1>
+    <p class="hero-sub" data-i18n="hero.sub"></p>
     <div class="cta-row">
       <a href="#" class="btn btn-primary">
         <span data-i18n="hero.cta1">Present My Deal to Investors</span>
@@ -598,7 +624,9 @@ const dict = {
     "nav.about": "About",
     "nav.private": "Private Access",
     "hero.badge": "+1M Followers",
+    "hero.kicker": "",
     "hero.title": "Welcome to the future. Curated real estate deals — revealed in <em>seconds</em>.",
+    "hero.sub": "",
     "hero.cta1": "Present My Deal to Investors",
     "hero.cta2": "I Want to Invest",
     "hero.ambient": "Real Estate Investing",
@@ -607,7 +635,7 @@ const dict = {
     "who.p1": "Magna Properties is a real estate advisory company based in the Algarve.",
     "who.p2": "We analyze, evaluate and distribute curated business deals through our closed network — in real time, around the clock.",
     "who.p3": "Investors always know the cost, the timeline, and the returns.",
-    "who.p4": "We invest daily in automations and system efficiency, so that the bureaucracy stays on our side — and peace of mind stays on yours.",
+    "who.p4": "We invest daily in automation and process efficiency, so that the bureaucracy stays on our side — and peace of mind stays on yours.",
     "who.pledge": "Rule #1: Speed.",
     "private.label": "Private Access",
     "private.title": "The best opportunities<br><em>are offline.</em>",
@@ -621,20 +649,22 @@ const dict = {
     "nav.about": "Quem Somos",
     "nav.private": "Acesso Privado",
     "hero.badge": "+1M de Seguidores",
-    "hero.title": "Bem-vindo ao futuro. Negócios imobiliários curados — revelados em <em>segundos</em>.",
-    "hero.cta1": "Apresente-nos um Negócio",
+    "hero.kicker": "",
+    "hero.title": "Bem-vindo.<br>O futuro do imobiliário é aqui.<br>Avaliamos e distribuímos investimentos imobiliários em <em>segundos.</em>",
+    "hero.sub": "",
+    "hero.cta1": "Apresentar os Meus Negócios a Investidores",
     "hero.cta2": "Quero Investir",
     "hero.ambient": "Investimento Imobiliário",
     "who.label": "Quem Somos",
     "who.title": "Diferentes<br><em>por natureza.</em>",
-    "who.p1": "A Magna Properties é uma empresa de consultoria imobiliária sediada no Algarve.",
-    "who.p2": "Analisamos, avaliamos e distribuímos negócios curados através da nossa rede fechada — em tempo real, a qualquer hora.",
-    "who.p3": "Os investidores sabem sempre o custo, o prazo e o retorno.",
-    "who.p4": "Investimos diariamente na automatização e eficiência de processos, para que a burocracia fique do nosso lado — e a tranquilidade do seu.",
+    "who.p1": "A Magna Properties é uma empresa de consultoria imobiliária sediada no Algarve, em Portugal.",
+    "who.p2": "Analisamos, avaliamos e distribuímos negócios através da nossa network — em tempo real, 24/7.",
+    "who.p3": "Os investidores sabem sempre os custos, os prazos e o retorno.",
+    "who.p4": "Investimos diariamente em automações e na eficiência dos nossos sistemas, para que a burocracia fique do nosso lado — e a tranquilidade do seu.",
     "who.pledge": "Rule #1: Speed.",
     "private.label": "Acesso Privado",
     "private.title": "As melhores oportunidades<br><em>estão offline.</em>",
-    "private.cta": "Apresente-nos um Negócio",
+    "private.cta": "Apresentar os Meus Negócios a Investidores",
     "private.cta2": "Quero Investir",
     "foot.about": "Quem Somos",
     "foot.services": "Serviços",
@@ -653,6 +683,12 @@ function setLang(lang) {
   document.querySelectorAll('[data-i18n-html]').forEach(el => {
     const key = el.getAttribute('data-i18n-html');
     if (dict[lang][key] !== undefined) el.innerHTML = dict[lang][key];
+  });
+  // Hide elements whose translation is an empty string
+  document.querySelectorAll('[data-i18n], [data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n') || el.getAttribute('data-i18n-html');
+    const val = dict[lang][key];
+    el.style.display = (val === '' || val === undefined && el.textContent.trim() === '') ? 'none' : '';
   });
   document.getElementById('lang-pt').classList.toggle('active', lang === 'pt');
   document.getElementById('lang-en').classList.toggle('active', lang === 'en');
