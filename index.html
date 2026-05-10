@@ -328,6 +328,8 @@
   .cta-center {
     display: flex;
     justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
   }
 
   form.lead {
@@ -502,7 +504,7 @@
     .private-sub { font-size: 15px; padding: 0 8px; }
     .cta-row { flex-direction: column; width: 100%; gap: 12px; }
     .cta-row .btn { width: 100%; justify-content: center; }
-    .cta-center { width: 100%; }
+    .cta-center { width: 100%; flex-direction: column; gap: 12px; }
     .cta-center .btn { width: 100%; justify-content: center; }
     .lang-toggle button { padding: 5px 11px; font-size: 10px; }
     footer { padding: 40px 24px; }
@@ -532,8 +534,12 @@
   <div class="hero-content">
     <h1 class="hero-title" data-i18n-html="hero.title">Welcome to the future. Curated real estate deals — revealed in <em>seconds</em>.</h1>
     <div class="cta-row">
-      <a href="#contact" class="btn btn-primary">
-        <span data-i18n="hero.cta1">Access</span>
+      <a href="#" class="btn btn-primary">
+        <span data-i18n="hero.cta1">Present My Deal to Investors</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="#" class="btn btn-ghost">
+        <span data-i18n="hero.cta2">I Want to Invest</span>
         <span class="arrow">→</span>
       </a>
     </div>
@@ -565,7 +571,11 @@
 
   <div class="cta-center">
     <a href="#" class="btn btn-primary">
-      <span data-i18n="private.cta">Access</span>
+      <span data-i18n="private.cta">Present My Deal to Investors</span>
+      <span class="arrow">→</span>
+    </a>
+    <a href="#" class="btn btn-ghost">
+      <span data-i18n="private.cta2">I Want to Invest</span>
       <span class="arrow">→</span>
     </a>
   </div>
@@ -589,7 +599,8 @@ const dict = {
     "nav.private": "Private Access",
     "hero.badge": "+1M Followers",
     "hero.title": "Welcome to the future. Curated real estate deals — revealed in <em>seconds</em>.",
-    "hero.cta1": "Access",
+    "hero.cta1": "Present My Deal to Investors",
+    "hero.cta2": "I Want to Invest",
     "hero.ambient": "Real Estate Investing",
     "who.label": "Who We Are",
     "who.title": "Different<br><em>by nature.</em>",
@@ -600,7 +611,8 @@ const dict = {
     "who.pledge": "Rule #1: Speed.",
     "private.label": "Private Access",
     "private.title": "The best opportunities<br><em>are offline.</em>",
-    "private.cta": "Access",
+    "private.cta": "Present My Deal to Investors",
+    "private.cta2": "I Want to Invest",
     "foot.about": "About",
     "foot.services": "Services",
     "foot.private": "Private Access"
@@ -610,7 +622,8 @@ const dict = {
     "nav.private": "Acesso Privado",
     "hero.badge": "+1M de Seguidores",
     "hero.title": "Bem-vindo ao futuro. Negócios imobiliários curados — revelados em <em>segundos</em>.",
-    "hero.cta1": "Acesso",
+    "hero.cta1": "Apresente-nos um Negócio",
+    "hero.cta2": "Quero Investir",
     "hero.ambient": "Investimento Imobiliário",
     "who.label": "Quem Somos",
     "who.title": "Diferentes<br><em>por natureza.</em>",
@@ -621,7 +634,8 @@ const dict = {
     "who.pledge": "Rule #1: Speed.",
     "private.label": "Acesso Privado",
     "private.title": "As melhores oportunidades<br><em>estão offline.</em>",
-    "private.cta": "Acesso",
+    "private.cta": "Apresente-nos um Negócio",
+    "private.cta2": "Quero Investir",
     "foot.about": "Quem Somos",
     "foot.services": "Serviços",
     "foot.private": "Acesso Privado"
